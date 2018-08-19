@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+float *input()
+{
+   static float r[3];
+   printf("Enter three coefficients a,b and c of a quadratic equation:\n");
+   scanf("%f",&r[0]);
+   scanf("%f",&r[1]);
+   scanf("%f",&r[2]);
+   return r;
+}
+
+float compute(float *p)
+{
+   float discr;
+   discr=p[1]*p[1]-4*p[0]*p[2];
+   return discr;
+}
+
+void output(float d,float *p)
+{
+   float alpha,beta,real,imag;
+   if(d==0)
+   {
+      alpha=beta=-p[1]/(2*p[0]);
+      printf("\nThe two roots are real and equal.");
+      printf("\nalpha=%f beta=%f",alpha,beta);
+   }
+   else if(d>0)
+   {
+      alpha=(-p[1]+sqrtf(d))/(2*p[0]);
+      beta=(-p[1]-sqrtf(d))/(2*p[0]);
+      printf("\nThe two roots are real and distinct.");
+      printf("\nalpha=%f beta=%f",alpha,beta);
+   }
+   else
+   {      
+      real=-p[1]/(2*p[0]);
+      imag=sqrtf(d)/(2*p[0]);
+      printf("\nThe two roots are imaginary.");
+      printf("\nalpha=%f+j%f beta=%f-j%f",real,imag,real,imag);
+   }
+}
+
+int main()
+{
+   float *p;
+   float d;
+   p=input();
+   d=compute(p);
+   output(d,p);
+}
