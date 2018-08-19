@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+void output(float d,float *p)
+{
+   float alpha,beta,real,imag;
+   if(d==0)
+   {
+      alpha=beta=-p[1]/(2*p[0]);
+      printf("\nThe two roots are real and equal.");
+      printf("\nalpha=%f beta=%f",alpha,beta);
+   }
+   else if(d>0)
+   {
+      alpha=(-p[1]+sqrtf(d))/(2*p[0]);
+      beta=(-p[1]-sqrtf(d))/(2*p[0]);
+      printf("\nThe two roots are real and distinct.");
+      printf("\nalpha=%f beta=%f",alpha,beta);
+   }
+   else
+   {      
+      real=-p[1]/(2*p[0]);
+      imag=sqrtf(d)/(2*p[0]);
+      printf("\nThe two roots are imaginary.");
+      printf("\nalpha=%f+j%f beta=%f-j%f",real,imag,real,imag);
+   }
+}
