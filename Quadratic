@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+float *input()
+{
+   static float r[3];
+   printf("Enter three coefficients a,b and c of a quadratic equation:\n");
+   scanf("%f",&r[0]);
+   scanf("%f",&r[1]);
+   scanf("%f",&r[2]);
+   return r;
+}
