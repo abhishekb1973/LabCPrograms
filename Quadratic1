@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+float compute(float *p)
+{
+   float discr;
+   discr=p[1]*p[1]-4*p[0]*p[2];
+   return discr;
+}
