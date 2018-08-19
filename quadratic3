@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main()
+{
+   float *p;
+   float d;
+   p=input();
+   d=compute(p);
+   output(d,p);
+}
